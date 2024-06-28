@@ -10,16 +10,16 @@
 
   /* fonts */
   --title-font-size-lg: 5rem;
-  --subtitle-font-size-lg: 1.8rem;
-  --body-font-size-lg: 1.5rem;
+  --subtitle-font-size-lg: 2.3rem;
+  --body-font-size-lg: 1.8rem;
 
   --title-font-size-md: 2.5rem;
-  --subtitle-font-size-md: 1.5rem;
-  --body-font-size-md: 1.2rem;
+  --subtitle-font-size-md: 2rem;
+  --body-font-size-md: 1.6rem;
 
-  --title-font-size-sm: 2rem;
-  --subtitle-font-size-sm: 1.2rem;
-  --body-font-size-sm: 1rem;
+  --title-font-size-sm: 2.3rem;
+  --subtitle-font-size-sm: 1.8rem;
+  --body-font-size-sm: 1.4rem;
 }
 
 * {

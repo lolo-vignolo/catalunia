@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface CardProps {
+  setShowModal: (showModal: boolean) => void;
   card: {
     id: number;
     title: string;
@@ -15,7 +16,7 @@ interface CardProps {
   };
 }
 
-export const Card = ({ card }: CardProps) => {
+export const Card = ({ card, setShowModal }: CardProps) => {
   const searchParams = useSearchParams();
   const [allowedImg, setAllowedImg] = useState<boolean>(false);
   const [allowedDescription, setAllowedDescription] = useState<boolean>(false);
@@ -24,19 +25,32 @@ export const Card = ({ card }: CardProps) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const idParam = searchParams.get("id");
+      const amountOfCards = localStorage.getItem("amount");
 
       if (idParam) {
         const checkIfIdExists = localStorage.getItem("qr-list");
+        const amount = parseInt(amountOfCards || "0");
         if (checkIfIdExists) {
           const qrList = checkIfIdExists.split(",");
-
           // Si el id no está en la lista, se agrega
           if (!qrList.includes(idParam)) {
+            //suma 1 al contador de cartas
+            localStorage.setItem("amount", `${amount + 1}`);
+
             localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
+            setShowModal(true);
+            setTimeout(() => {
+              setShowModal(false);
+            }, 5000);
           }
         } else {
           // Si no existe la lista, se crea con el id actual
+          localStorage.setItem("amount", "1");
           localStorage.setItem("qr-list", idParam);
+          setShowModal(true);
+          setTimeout(() => {
+            setShowModal(true);
+          }, 5000);
         }
       }
 
