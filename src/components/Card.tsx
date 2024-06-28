@@ -17,12 +17,13 @@ interface CardProps {
 
 export const Card = ({ card }: CardProps) => {
   const searchParams = useSearchParams();
-  console.log(searchParams.get("id"));
 
   const [allowedImg, setAllowedImg] = useState<boolean>(false);
   const [allowedDescription, setAllowedDescription] = useState<boolean>(false);
 
   const { passwordDescription, passwordImg } = card;
+
+  console.log(passwordDescription === searchParams.get("id"));
 
   useEffect(() => {
     if (typeof window !== undefined) {
