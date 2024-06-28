@@ -19,7 +19,6 @@ export const Card = ({ card }: CardProps) => {
   const searchParams = useSearchParams();
   const [allowedImg, setAllowedImg] = useState<boolean>(false);
   const [allowedDescription, setAllowedDescription] = useState<boolean>(false);
-  const allowedIds = ["1234", "5678"];
 
   const { passwordDescription, passwordImg } = card;
 

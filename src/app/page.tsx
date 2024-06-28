@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Card } from "@/components/Card";
 import { cardsData } from "@/data/cardData";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -20,7 +21,11 @@ export default function Home() {
         </div>
         <div className={styles.cardsContainer}>
           {cardsData.map((card) => {
-            return <Card key={card.id} card={card} />;
+            return (
+              <Suspense key={card.id} fallback={<div>Loading...</div>}>
+                <Card card={card} />
+              </Suspense>
+            );
           })}
         </div>
       </div>
