@@ -15,7 +15,7 @@ export const Modal = ({ setShowModal, showModal, children }: ModalProps) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const amountOfCards = localStorage.getItem("amount");
-      const amount = parseInt(amountOfCards || "0", 10);
+      const amount = parseInt(amountOfCards || "0");
       setAmount(amount);
     }
   }, []); // Empty dependency array to run only once after initial render
@@ -43,7 +43,7 @@ export const Modal = ({ setShowModal, showModal, children }: ModalProps) => {
         <div className={styles.modalContent}>
           <h2>¡Felicidades!</h2>
           <p>Has conseguido un nuevo token</p>
-          <p>Tienes {amount} tokens de un total de 40!</p>
+          <p>Tienes {amount + 1} tokens de un total de 40!</p>
           <div>
             <button
               className={styles.closeButton}

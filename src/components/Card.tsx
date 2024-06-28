@@ -41,7 +41,7 @@ export const Card = ({ card, setShowModal }: CardProps) => {
             setShowModal(true);
             setTimeout(() => {
               setShowModal(false);
-            }, 5000);
+            }, 3000);
           }
         } else {
           // Si no existe la lista, se crea con el id actual
