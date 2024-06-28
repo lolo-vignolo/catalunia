@@ -23,8 +23,6 @@ export const Card = ({ card }: CardProps) => {
 
   const { passwordDescription, passwordImg } = card;
 
-  console.log(passwordDescription === searchParams.get("id"));
-
   useEffect(() => {
     if (typeof window !== undefined) {
       const idParam = searchParams.get("id");
@@ -51,7 +49,7 @@ export const Card = ({ card }: CardProps) => {
         }
       }
     }
-  }, [searchParams]);
+  }, [searchParams, passwordDescription, passwordImg]);
 
   return (
     <div className={styles.cardContainer}>
