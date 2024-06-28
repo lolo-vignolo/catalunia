@@ -17,30 +17,35 @@ interface CardProps {
 
 export const Card = ({ card }: CardProps) => {
   const searchParams = useSearchParams();
-
   const [allowedImg, setAllowedImg] = useState<boolean>(false);
   const [allowedDescription, setAllowedDescription] = useState<boolean>(false);
-
   const { passwordDescription, passwordImg } = card;
 
   useEffect(() => {
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       const idParam = searchParams.get("id");
+
       if (idParam) {
         const checkIfIdExists = localStorage.getItem("qr-list");
         if (checkIfIdExists) {
           const qrList = checkIfIdExists.split(",");
 
+          // Si el id no está en la lista, se agrega
           if (!qrList.includes(idParam)) {
             localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
           }
+        } else {
+          // Si no existe la lista, se crea con el id actual
+          localStorage.setItem("qr-list", idParam);
         }
       }
 
+      // Verificar los permisos de la imagen y descripción
       const storedQrList = localStorage.getItem("qr-list");
       if (storedQrList) {
         const qrList = storedQrList.split(",");
 
+        // Si los ids de las cartas están en la lista, se permiten mostrar las imágenes y descripciones
         if (qrList.includes(passwordImg)) {
           setAllowedImg(true);
         }
@@ -53,7 +58,6 @@ export const Card = ({ card }: CardProps) => {
 
   return (
     <div className={styles.cardContainer}>
-      <h1>{passwordDescription ? "hola" : "chau"}</h1>
       <div className={styles.imageContainer}>
         <Image
           src={card.image}
