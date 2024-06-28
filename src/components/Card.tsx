@@ -53,11 +53,12 @@ export const Card = ({ card }: CardProps) => {
 
   return (
     <div className={styles.cardContainer}>
+      <h1>{passwordDescription ? "hola" : "chau"}</h1>
       <div className={styles.imageContainer}>
         <Image
           src={card.image}
           alt="Prades"
-          style={{ filter: allowedImg ? "blur(5px)" : "" }}
+          style={{ filter: !allowedImg ? "blur(5px)" : "" }}
           layout="fill"
         />
       </div>
