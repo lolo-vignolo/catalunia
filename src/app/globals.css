@@ -8,6 +8,10 @@
   /* backgorunds */
   --base-background: #ddd6c4;
 
+  /* colors */
+  --color-white: #fff;
+  --color-black: #000;
+
   /* fonts */
   --title-font-size-lg: 5rem;
   --subtitle-font-size-lg: 2.3rem;

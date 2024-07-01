@@ -1,0 +1,20 @@
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* tablet */
+@media (min-width: 1024px) {
+  .headerContainer {
+    flex-direction: row;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+}
