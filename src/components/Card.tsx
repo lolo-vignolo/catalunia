@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./card.module.css";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CardProps {
   setShowModal: (showModal: boolean) => void;
@@ -19,7 +19,9 @@ interface CardProps {
 export const Card = ({ card, setShowModal }: CardProps) => {
   const searchParams = useSearchParams();
   const [allowedImg, setAllowedImg] = useState<boolean>(false);
-  const [allowedDescription, setAllowedDescription] = useState<boolean>(false);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
   const { passwordDescription, passwordImg } = card;
 
   useEffect(() => {
@@ -63,27 +65,33 @@ export const Card = ({ card, setShowModal }: CardProps) => {
         if (qrList.includes(passwordImg)) {
           setAllowedImg(true);
         }
-        if (qrList.includes(passwordDescription)) {
-          setAllowedDescription(true);
-        }
+      }
+      // Set focus if idParam matches card.passwordImg
+      const isCardFocused = idParam === passwordImg;
+      setIsFocused(isCardFocused);
+
+      // Scroll into view if the card is focused
+      if (isCardFocused && cardRef.current) {
+        cardRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
       }
     }
   }, [searchParams, passwordDescription, passwordImg]);
 
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardContainer} ref={cardRef}>
       <div className={styles.imageContainer}>
+        {!allowedImg && <h1 className={styles.titleCard}>{card.title}</h1>}
         <Image
           src={card.image}
           alt="Prades"
-          style={{ filter: !allowedImg ? "blur(5px)" : "" }}
+          style={{ filter: !allowedImg ? " blur(5px) brightness(0.2)" : "" }}
           layout="fill"
         />
       </div>
-      <div
-        className={styles.bodyContainer}
-        style={{ filter: !allowedDescription ? "blur(5px)" : "" }}
-      >
+      <div className={styles.bodyContainer}>
         <p className={styles.cardBody}>{card.description}</p>
       </div>
     </div>

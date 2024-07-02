@@ -19,3 +19,19 @@
 .navbar h1 {
   color: var(--color-white);
 }
+
+.title {
+  font-size: var(--subtitle-font-size-sm);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 1024px) {
+  .title {
+    font-size: var(--subtitle-font-size-md);
+  }
+  .navbar {
+    padding: 1rem 6rem;
+  }
+}

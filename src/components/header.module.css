@@ -11,6 +11,7 @@
 @media (min-width: 1024px) {
   .headerContainer {
     flex-direction: row;
+    padding: 0 6rem;
   }
 }
 

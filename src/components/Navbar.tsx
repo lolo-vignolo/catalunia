@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Image src="/images/caballo.png" alt="Prades" width={50} height={50} />
-      <h1>Muntanyes de Prades</h1>
+      <h1 className={styles.title}>Set cents comtat prades</h1>
     </nav>
   );
 };

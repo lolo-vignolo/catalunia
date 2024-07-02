@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import styles from "./page.module.css";
 import { Card } from "@/components/Card";
 import { cardsData } from "@/data/cardData";
@@ -7,6 +6,7 @@ import { Suspense, useState } from "react";
 import { Modal } from "@/components/Modal";
 import { Header } from "@/components/Header";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -28,6 +28,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer />
     </Modal>
   );
 }

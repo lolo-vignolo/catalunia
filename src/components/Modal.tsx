@@ -41,9 +41,10 @@ export const Modal = ({ setShowModal, showModal, children }: ModalProps) => {
           run={true}
         />
         <div className={styles.modalContent}>
-          <h2>¡Felicidades!</h2>
-          <p>Has conseguido un nuevo token</p>
-          <p>Tienes {amount + 1} tokens de un total de 40!</p>
+          <h2>Enhorabona!</h2>
+          <p>Ja tens un nou cromo de l&apos;auca</p>
+          <p>Tens {amount + 1} tokens d&apos;un total de 20!</p>
+
           <div>
             <button
               className={styles.closeButton}
