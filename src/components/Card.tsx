@@ -87,7 +87,7 @@ export const Card = ({ card, setShowModal }: CardProps) => {
         <Image
           src={card.image}
           alt="Prades"
-          style={{ filter: !allowedImg ? " blur(5px) brightness(0.2)" : "" }}
+          style={{ filter: !allowedImg ? " blur(5px) brightness(0.1)" : "" }}
           layout="fill"
         />
       </div>
