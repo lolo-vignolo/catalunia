@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem 1rem 1rem;
+  padding: 6rem 0rem 1rem;
   min-height: 100vh;
 }
 
@@ -15,9 +15,8 @@
 
 .cardsContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
