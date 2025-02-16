@@ -17,17 +17,6 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar />
         <div style={{ position: "relative" }}>
-          <img
-            src="/images/pergaminoCorner.webp"
-            alt="Prades"
-            style={{
-              position: "absolute",
-              zIndex: -1,
-              top: 0,
-              left: 0,
-              width: "45%",
-            }}
-          />
           <Header />
           <div className={styles.cardsContainer}>
             {cardsData.map((card) => {
