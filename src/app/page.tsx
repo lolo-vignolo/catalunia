@@ -8,6 +8,7 @@ import { Header } from "@/components/Header/Header";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
 import Image from "next/image";
+import ScrollPage from "@/components/Perfamino";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -15,10 +16,11 @@ export default function Home() {
   return (
     <Modal setShowModal={setShowModal} showModal={showModal}>
       <main className={styles.main}>
-        <Navbar />
-        <div style={{ position: "relative" }}>
-          <Header />
-          <div className={styles.cardsContainer}>
+        {/* <Navbar /> */}
+        {/* <div style={{ position: "relative" }}> */}
+        {/* <Header /> */}
+        <ScrollPage />
+        {/* <div className={styles.cardsContainer}>
             {cardsData.map((card) => {
               return (
                 <Suspense key={card.id} fallback={<div>Loading...</div>}>
@@ -26,8 +28,8 @@ export default function Home() {
                 </Suspense>
               );
             })}
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </main>
       <Footer />
     </Modal>
