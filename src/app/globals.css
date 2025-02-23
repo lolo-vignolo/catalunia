@@ -13,17 +13,17 @@
   --color-black: #000;
 
   /* fonts */
-  --title-font-size-lg: 5rem;
-  --subtitle-font-size-lg: 2.3rem;
-  --body-font-size-lg: 1.8rem;
+  --title-font-size-lg: 4rem; /* Antes: 5rem → reducido para mejor equilibrio */
+  --subtitle-font-size-lg: 2.5rem; /* Antes: 2.3rem → ligeramente aumentado */
+  --body-font-size-lg: 1.6rem; /* Antes: 1.8rem → reducido para mejor lectura */
 
-  --title-font-size-md: 2.5rem;
-  --subtitle-font-size-md: 2rem;
-  --body-font-size-md: 1.6rem;
+  --title-font-size-md: 3rem; /* Antes: 2.5rem → mejor jerarquía */
+  --subtitle-font-size-md: 2rem; /* Igual que antes */
+  --body-font-size-md: 1.5rem; /* Antes: 1.6rem → ligero ajuste */
 
-  --title-font-size-sm: 2.3rem;
-  --subtitle-font-size-sm: 1.8rem;
-  --body-font-size-sm: 1.4rem;
+  --title-font-size-sm: 2.5rem; /* Antes: 2.3rem → aumentado para mejor visibilidad */
+  --subtitle-font-size-sm: 1.8rem; /* Igual que antes */
+  --body-font-size-sm: 1.3rem; /* Antes: 1.4rem → ligero ajuste */
 }
 
 * {
@@ -40,7 +40,7 @@ body {
 }
 
 body {
-  background: var(--base-background);
+  background-image: url("/images/pergamino/pergamino.webp");
 }
 
 /* reset */

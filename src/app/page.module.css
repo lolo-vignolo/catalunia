@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem 1rem 1rem;
+  padding: 6rem 0rem 1rem;
   min-height: 100vh;
+  position: relative;
 }
 
 .title {
@@ -15,11 +16,11 @@
 
 .cardsContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  gap: 1rem;
 }
 
 @media (prefers-reduced-motion) {
@@ -69,4 +70,26 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+@keyframes scrollOpen {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+.scroll-container {
+  background: url("/scroll-texture.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: scrollOpen 1.5s ease-in-out forwards;
 }

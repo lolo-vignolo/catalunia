@@ -1,0 +1,35 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-black);
+}
+
+.navbarLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: var(--subtitle-font-size-sm);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 1024px) {
+  .title {
+    font-size: var(--subtitle-font-size-md);
+  }
+  .navbar {
+    padding: 1rem 6rem;
+  }
+}
