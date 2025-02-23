@@ -1,76 +1,74 @@
+"use client"; // Para Next.js con App Router
+import CardPrePage from "@/prepages/CardPrePage";
 import { motion } from "framer-motion";
-import React from "react";
+import { useEffect, useState } from "react";
 
-const ScrollPage = () => {
+const PaperBackground = ({ children }: { children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 500);
+  }, []);
+
   return (
-    // <div style={styles.wrapper}>
-    <div>
-      {/* Palos de pergamino (arriba) */}
-      <div style={styles.scrollBarTop} />
-
-      {/* Pergamino animado */}
+    <motion.div
+      initial={{
+        scaleY: 0,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 5%, 0% 5%)",
+        opacity: 0.7,
+        borderRadius: "50px 50px 10px 10px",
+        boxShadow: "0px 15px 40px rgba(0,0,0,0.5)",
+        rotate: -2,
+      }}
+      animate={{
+        scaleY: 1,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        borderRadius: "20px",
+        boxShadow: "0px 10px 20px rgba(0,0,0,0.3)",
+        rotate: 0,
+        transition: {
+          duration: 2,
+          ease: [0.25, 1, 0.5, 1],
+        },
+      }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        transformOrigin: "top",
+        backgroundImage: "url('/images/pergamino.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        zIndex: -1,
+      }}
+    >
+      {/* Contenido del pergamino */}
       <motion.div
-        initial={{
-          scaleY: 0, // Comienza cerrado
-          opacity: 0.5, // Ligera transparencia al inicio
-          transformOrigin: "center", // Se expande desde el centro
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 1 } }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+          color: "#3a2d1f",
+          fontSize: "24px",
+          fontWeight: "bold",
+          textShadow: "2px 2px 5px rgba(0,0,0,0.3)",
+          padding: "20px",
         }}
-        animate={{
-          scaleY: 1, // Se expande completamente
-          opacity: 1, // Aparece totalmente
-        }}
-        transition={{ duration: 2, ease: "easeInOut" }} // Animación suave
-        // style={styles.scrollBody}
       >
-        <h1 style={styles.text}>📜 ¡Bienvenido al pergamino! 📜</h1>
+        {children}
       </motion.div>
-
-      {/* Palos de pergamino (abajo) */}
-      <div style={styles.scrollBarBottom} />
-    </div>
+    </motion.div>
   );
 };
 
-const styles = {
-  wrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100vh",
-  },
-  scrollBody: {
-    backgroundImage: "url('/images/pergamino.png')", // Imagen del pergamino
-    backgroundSize: "contain", // Ajustar sin distorsión
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center", // Centrar la imagen
-    width: "60vw",
-    maxWidth: "500px",
-    padding: "20px",
-    textAlign: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.5)", // Sombra para realismo
-    overflow: "hidden", // Evita que el contenido se vea antes de abrirse
-  },
-  text: {
-    fontFamily: "'Papyrus', fantasy", // Fuente estilo pergamino
-    fontSize: "1.5rem",
-  },
-  scrollBarTop: {
-    width: "64vw",
-    maxWidth: "520px",
-    height: "30px",
-    borderRadius: "15px",
-  },
-  scrollBarBottom: {
-    width: "64vw",
-    maxWidth: "520px",
-    height: "30px",
-    borderRadius: "15px",
-    marginTop: "-15px", // Ajuste para que se vea mejor
-  },
-};
-
-export default ScrollPage;
+export default PaperBackground;
