@@ -2,6 +2,7 @@ export const cardsData = [
   {
     id: 1,
     titles: ["Siurana"],
+    portadaImg: "/images/cardsBlackAndWhite/cat-bn-1.png",
     image: "/images/cards/card-1.png",
     description:
       "Elbonreigaumell ha estat moltespavilat enferneiner uncomtatper teniraratllaelsbarons",
@@ -12,6 +13,7 @@ export const cardsData = [
   {
     id: 2,
     titles: ["Prades"],
+    portadaImg: "/images/cardsBlackAndWhite/cat-bn-2.png",
     image: "/images/cards/card-2.png",
     description:
       "Ambpompaisolemnitat Esfundatelnoucomtat. L'infantRamon Berenguer n'Esfetelcomteprimer",
@@ -23,6 +25,7 @@ export const cardsData = [
   {
     id: 3,
     titles: ["Falset"],
+    portadaImg: "/images/cardsBlackAndWhite/cat-bn-3.png",
     image: "/images/cards/card-3.png",
     description:
       "Elmenutdedeugermans enrerenoespot quedar; repunfeuihadeprestar juramentdebocaimans",
@@ -32,6 +35,7 @@ export const cardsData = [
   {
     id: 4,
     titles: ["Capafonts", "Bellmunt de Priorat"],
+    portadaImg: "/images/cardsBlackAndWhite/cat-bn-4.png",
     image: "/images/cards/card-4.png",
     description:
       "Nobles,infantsiprelats, cavallersiciutadans, delspetitsfinsalsmesgrans,al'acte son convidats.",
@@ -41,6 +45,7 @@ export const cardsData = [
   {
     id: 5,
     titles: "La Febró",
+    portadaImg: "/images/cardsBlackAndWhite/cat-bn-5.png",
     image: "/images/cards/card-5.png",
     description:
       "Daltdelcinglebenufana lardidaibellaSiurana, antic cap de valiat, fa decor del noucomtat.",
@@ -50,6 +55,7 @@ export const cardsData = [
   {
     id: 5,
     titles: "El Molar",
+    portadaImg: "/images/cardsBlackAndWhite/cat-bn-5.png",
     image: "/images/cards/card-5.png",
     description:
       "Daltdelcinglebenufana lardidaibellaSiurana, antic cap de valiat, fa decor del noucomtat.",
