@@ -3,7 +3,8 @@ import React from "react";
 
 const ScrollPage = () => {
   return (
-    <div style={styles.wrapper}>
+    // <div style={styles.wrapper}>
+    <div>
       {/* Palos de pergamino (arriba) */}
       <div style={styles.scrollBarTop} />
 
@@ -19,7 +20,7 @@ const ScrollPage = () => {
           opacity: 1, // Aparece totalmente
         }}
         transition={{ duration: 2, ease: "easeInOut" }} // Animación suave
-        style={styles.scrollBody}
+        // style={styles.scrollBody}
       >
         <h1 style={styles.text}>📜 ¡Bienvenido al pergamino! 📜</h1>
       </motion.div>
