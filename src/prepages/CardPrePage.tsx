@@ -16,12 +16,13 @@ export default function CardPrePage() {
   if (!card) return null;
 
   const handleGoBack = () => {
+    console.log("go back");
     window.history.back();
   };
 
   return (
     <div className={styles.containerCard}>
-      <ArrowLeft
+      {/* <ArrowLeft
         size={40}
         color="#000"
         style={{
@@ -29,7 +30,7 @@ export default function CardPrePage() {
           marginRight: "auto",
         }}
         onClick={handleGoBack}
-      />
+      /> */}
       <div
         style={{
           width: "fit-content",

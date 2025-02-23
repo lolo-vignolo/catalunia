@@ -1,5 +1,5 @@
 "use client"; // Para Next.js con App Router
-import CardPrePage from "@/prepages/CardPrePage";
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -35,11 +35,12 @@ const PaperBackground = ({ children }: { children: React.ReactNode }) => {
         },
       }}
       style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
+        position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         width: "100vw",
-        height: "100vh",
+        height: "70rem",
         transformOrigin: "top",
         backgroundImage: "url('/images/pergamino.png')",
         backgroundSize: "cover",
