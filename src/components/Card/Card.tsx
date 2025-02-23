@@ -3,16 +3,20 @@ import Image from "next/image";
 import styles from "./card.module.css";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 interface CardProps {
   setShowModal: (showModal: boolean) => void;
   card: {
-    id: number;
-    title: string;
+    id: string;
+    titles: string[];
+    portadaImg: string;
     image: string;
     description: string;
+    link: string;
     passwordImg: string;
     passwordDescription: string;
+    borderColor: string;
   };
 }
 
@@ -21,6 +25,7 @@ export const Card = ({ card, setShowModal }: CardProps) => {
   const [allowedImg, setAllowedImg] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const { passwordDescription, passwordImg } = card;
 
@@ -82,17 +87,47 @@ export const Card = ({ card, setShowModal }: CardProps) => {
 
   return (
     <div className={styles.cardContainer} ref={cardRef}>
-      <div className={styles.imageContainer}>
-        {!allowedImg && <h1 className={styles.titleCard}>{card.title}</h1>}
+      <Link
+        href={`/cardpage?id=${card.id}`}
+        className={styles.imageContainer}
+        style={{
+          border: `2px solid ${card.borderColor}`,
+          outline: `4px solid ${card.borderColor}`,
+          outlineOffset: "2px",
+        }}
+      >
         <Image
-          src={card.image}
+          src={card.portadaImg}
           alt="Prades"
-          style={{ filter: !allowedImg ? " blur(5px) brightness(0.8)" : "" }}
+          style={
+            {
+              // filter: !allowedImg ? " blur(3px) brightness(0.8)" : "",
+            }
+          }
           layout="fill"
         />
-      </div>
+        <Image
+          src="/images/sellos/selloMedieval.png"
+          alt="Sello Real"
+          className={styles.selloReal}
+          height={70}
+          width={70}
+        />
+      </Link>
       <div className={styles.bodyContainer}>
-        <p className={styles.cardBody}>{card.description}</p>
+        {card.titles.map((title, index) => (
+          <h2
+            key={index}
+            className={styles.cardTitle}
+            style={{
+              color: isHovered ? card.borderColor : "#000",
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {title}
+          </h2>
+        ))}
       </div>
     </div>
   );

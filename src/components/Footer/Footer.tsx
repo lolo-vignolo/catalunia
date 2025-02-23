@@ -25,7 +25,9 @@ export const Footer = () => {
           <div className={style.slider}>
             {cardsData.map((card, index) => (
               <span key={index} style={{ marginRight: "2rem" }}>
-                <h1>{card.title}</h1>
+                {card.titles.map((title, index) => (
+                  <h1 key={index}>{title}</h1>
+                ))}
               </span>
             ))}
             {cardsData.map((card, index) => (
@@ -33,14 +35,16 @@ export const Footer = () => {
                 key={cardsData.length + index}
                 style={{ marginRight: "2rem" }}
               >
-                <h1>{card.title}</h1>
+                {card.titles.map((title, index) => (
+                  <h1 key={index}>{title}</h1>
+                ))}
               </span>
             ))}
           </div>
         </div>
         <div>
           <Image
-            src="/images/caballo.png"
+            src="/images/logoAniversary.png"
             alt="Prades"
             width={200}
             height={200}
@@ -50,7 +54,7 @@ export const Footer = () => {
 
       {/* version desktop */}
 
-      <div className={style.footerInnerContainerDesktop}>
+      {/* <div className={style.footerInnerContainerDesktop}>
         <h1>Prades:</h1>
         <div className={style.columnTounsDesktop}>
           <div>
@@ -98,7 +102,7 @@ export const Footer = () => {
             height={200}
           />
         </div>
-      </div>
+      </div> */}
       <div className={style.media}>
         <p>© 2021 setcents comtat prades</p>
         <div className={style.socialMedia}>

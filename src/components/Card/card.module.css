@@ -7,20 +7,21 @@
   text-align: start;
   gap: 1rem;
   padding: 0.4rem 0.6rem 1.2rem;
-  width: 45%;
-  min-height: 30rem;
+  width: 47%;
+  min-height: 20rem;
+  height: fit-content;
 }
 
 .bodyContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.2rem 0 0;
 }
 
 .cardBody {
@@ -36,23 +37,34 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 280px; /* Ajusta esta altura según sea necesario */
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.titleCard {
-  color: var(--color-white);
-  position: relative;
-  z-index: 1;
+.selloReal {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  padding: 0;
+  margin: 0 !important;
 }
+.cardTitle {
+  font-size: var(--body-font-size-sm);
+  cursor: pointer;
 
+  /* hover effect */
+}
+.cardTitle:hover {
+  transform: scale(1.09);
+  transition: transform 0.3s ease-in-out;
+}
 @media (min-width: 1024px) {
   .cardContainer {
     width: 30%;
   }
 
-  .cardBody {
+  .cardTitle {
     font-size: var(--body-font-size-md);
   }
 }
@@ -62,7 +74,7 @@
     width: 25%;
     max-width: 350px;
   }
-  .cardBody {
+  .cardTitle {
     font-size: var(--body-font-size-lg);
   }
 }

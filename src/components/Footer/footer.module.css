@@ -27,7 +27,7 @@
 
 .slider {
   display: inline-block;
-  animation: scroll 30s linear infinite;
+  animation: scroll 80s linear infinite;
 }
 .media {
   display: flex;

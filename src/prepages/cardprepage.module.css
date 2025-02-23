@@ -1,0 +1,24 @@
+.containerCard {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.descritionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+
+.description {
+  font-size: var(--body-font-size-lg);
+  text-align: center;
+}

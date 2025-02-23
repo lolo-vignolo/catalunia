@@ -7,8 +7,7 @@ import { Modal } from "@/components/Modal/Modal";
 import { Header } from "@/components/Header/Header";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
-import Image from "next/image";
-import ScrollPage from "@/components/Perfamino";
+import { Flourish, FlourishAlt } from "@/svg/Flourish";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -16,11 +15,33 @@ export default function Home() {
   return (
     <Modal setShowModal={setShowModal} showModal={showModal}>
       <main className={styles.main}>
-        {/* <Navbar /> */}
-        {/* <div style={{ position: "relative" }}> */}
-        {/* <Header /> */}
-        <ScrollPage />
-        {/* <div className={styles.cardsContainer}>
+        <Navbar />
+        <div style={{ position: "relative" }}>
+          <img
+            src="/images/pergaminoCorner.webp"
+            alt="Prades"
+            style={{
+              zIndex: -1,
+              position: "absolute",
+              top: "-4rem",
+              left: "-1.5rem",
+              width: "10rem",
+            }}
+          />
+          <Header />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              marginBottom: "2rem",
+            }}
+          >
+            <Flourish />
+          </div>
+
+          {/* <ScrollPage /> */}
+          <div className={styles.cardsContainer}>
             {cardsData.map((card) => {
               return (
                 <Suspense key={card.id} fallback={<div>Loading...</div>}>
@@ -28,8 +49,9 @@ export default function Home() {
                 </Suspense>
               );
             })}
-          </div> */}
-        {/* </div> */}
+            <FlourishAlt />
+          </div>
+        </div>
       </main>
       <Footer />
     </Modal>
