@@ -40,13 +40,12 @@ const PaperBackground = ({ children }: { children: React.ReactNode }) => {
         justifyContent: "center",
         alignItems: "center",
         width: "100vw",
-        height: "70rem",
+        height: "75rem",
         transformOrigin: "top",
         backgroundImage: "url('/images/pergamino.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        zIndex: -1,
       }}
     >
       {/* Contenido del pergamino */}
@@ -59,7 +58,6 @@ const PaperBackground = ({ children }: { children: React.ReactNode }) => {
           alignItems: "center",
           justifyContent: "center",
           height: "100vh",
-          color: "#3a2d1f",
           fontSize: "24px",
           fontWeight: "bold",
           textShadow: "2px 2px 5px rgba(0,0,0,0.3)",
