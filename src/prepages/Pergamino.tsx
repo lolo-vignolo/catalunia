@@ -8,6 +8,7 @@ import { cardsData } from "@/data/cardData";
 import { useSearchParams } from "next/navigation";
 import { Flourish, FlourishAlt } from "@/svg/Flourish";
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const Pergamino = () => {
   const searchParams = useSearchParams();
@@ -15,10 +16,6 @@ const Pergamino = () => {
   const card = cardsData.find((card) => card.id === id);
 
   if (!card) return null;
-
-  const handleGoBack = () => {
-    window.history.back();
-  };
 
   return (
     <motion.div
@@ -48,7 +45,8 @@ const Pergamino = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "100vw",
-        height: "75rem",
+        paddingTop: "5rem",
+        height: "65rem",
         transformOrigin: "top",
         backgroundImage: "url('/images/pergamino.png')",
         backgroundSize: "cover",
@@ -90,7 +88,9 @@ const Pergamino = () => {
               border: `solid 3px ${card.borderColor} `,
             }}
           >
-            <ArrowLeft size={30} color="#000" onClick={handleGoBack} />
+            <Link href="/">
+              <ArrowLeft size={30} color="#000" />
+            </Link>
           </button>
           <div
             style={{
