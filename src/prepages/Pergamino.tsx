@@ -19,12 +19,14 @@ const Pergamino = () => {
     if (typeof window !== "undefined") {
       const idParam = searchParams.get("id");
       if (idParam) {
-        const checkIfIdExists = localStorage.getItem("qr-list");
+        const checkIfIdExists = localStorage.getItem("qr-list") || "";
         if (checkIfIdExists) {
           const qrList = checkIfIdExists.split(",");
           if (!qrList.includes(idParam)) {
             localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
           }
+        } else {
+          localStorage.setItem("qr-list", idParam);
         }
       }
     }
