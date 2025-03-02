@@ -22,8 +22,11 @@ const Pergamino = () => {
         const checkIfIdExists = localStorage.getItem("qr-list");
         if (checkIfIdExists) {
           const qrList = checkIfIdExists.split(",");
+          console.log(qrList);
 
           if (!qrList.includes(idParam)) {
+            console.log("No está en la lista");
+
             localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
           }
         }

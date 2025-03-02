@@ -1,14 +1,15 @@
 .tooltipContainer {
   position: absolute;
   top: 4rem;
-  right: 2rem;
-  width: calc(100% - 4rem);
+  right: 1rem;
+  width: calc(100% - 2rem);
   background-color: white;
   padding: 0.5rem 0.5rem 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border-color: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 3rem;
 }
 
 .tooltipClose {
@@ -24,4 +25,20 @@
 
 .tooltipClose:hover {
   background-color: #a44b4b;
+}
+
+.tooltipLang {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+}
+
+.btnLang {
+  background-color: #bb5c5c;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  color: white;
 }

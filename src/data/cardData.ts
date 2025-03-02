@@ -8,7 +8,6 @@ export const cardsData = [
       "Elbonreigaumell ha estat moltespavilat enferneiner uncomtatper teniraratllaelsbarons",
     link: "https://www.google.com/maps/d/edit?mid=1l9QqeO2RVIm96auNuYvvB6gptHO_8vQ&usp=sharing",
     passwordImg: "86753098",
-    passwordDescription: "10293847",
     borderColor: "#84be94",
   },
   {
@@ -20,7 +19,6 @@ export const cardsData = [
       "Ambpompaisolemnitat Esfundatelnoucomtat. L'infantRamon Berenguer n'Esfetelcomteprimer",
     link: "",
     passwordImg: "20394857",
-    passwordDescription: "56473829",
     bgColr: "red",
     parteDeLaCarta: "parte de la carta",
     borderColor: "	#3a8ac6",
@@ -34,7 +32,6 @@ export const cardsData = [
       "Elmenutdedeugermans enrerenoespot quedar; repunfeuihadeprestar juramentdebocaimans",
     link: "",
     passwordImg: "48572619",
-    passwordDescription: "19283746",
     borderColor: "#7c6abb",
   },
   {
@@ -46,7 +43,6 @@ export const cardsData = [
       "Nobles,infantsiprelats, cavallersiciutadans, delspetitsfinsalsmesgrans,al'acte son convidats.",
     link: "",
     passwordImg: "73619284",
-    passwordDescription: "91827364",
     borderColor: "#e3cfaa",
   },
   {
@@ -58,7 +54,6 @@ export const cardsData = [
       "Daltdelcinglebenufana lardidaibellaSiurana, antic cap de valiat, fa decor del noucomtat.",
     link: "",
     passwordImg: "84736291",
-    passwordDescription: "56473820",
     borderColor: "#93949d",
   },
 
@@ -71,7 +66,6 @@ export const cardsData = [
       "Prades,lavilacomal n'esdeve la copital; pero comquehifamoltfred sovint viuen a Falset.",
     link: "",
     passwordImg: "28374651",
-    passwordDescription: "73829106",
     borderColor: "#fa80ce",
   },
   {
@@ -83,7 +77,6 @@ export const cardsData = [
       "ElMontsantilaGritella sabracenaCornudella Delcomtatvilapregona passaaser-nelasegona",
     link: "",
     passwordImg: "91028374",
-    passwordDescription: "63719285",
     borderColor: "#398454",
   },
   {
@@ -95,7 +88,6 @@ export const cardsData = [
       "Hihaalgunslocs onel senyor comparteixelseupoder: laCartoixoamb elprior, certesvilesambPoblet",
     link: "",
     passwordImg: "74839201",
-    passwordDescription: "28374659",
     borderColor: "#c47070",
   },
   {
@@ -107,7 +99,6 @@ export const cardsData = [
       "SonlesMuntanyesdePrades l'escenariontotcomenca. is'hiajuntenvincutades lesterresdelnobleEntenca",
     link: "",
     passwordImg: "91029384",
-    passwordDescription: "47583920",
     borderColor: "#d8aed2",
   },
 
@@ -120,7 +111,6 @@ export const cardsData = [
       "Dela seva mort enca, tornarenalaCorona Falset,Altafallaora ProtdinTiwiuoMorca",
     link: "",
     passwordImg: "74829301",
-    passwordDescription: "38271649",
     borderColor: "#b5a588",
   },
   {
@@ -132,7 +122,6 @@ export const cardsData = [
       "lencaras'hiafegiria eldominideGarcia Aixiesfundaunsenvoriu entre serres,maririu.",
     link: "",
     passwordImg: "57382910",
-    passwordDescription: "94857362",
     borderColor: "#d6c3a8",
   },
   {
@@ -144,7 +133,6 @@ export const cardsData = [
       "Aquestadonacib fixa unacondicio: elcomte hoconservara semprequeunhereuhihaura",
     link: "",
     passwordImg: "38475619",
-    passwordDescription: "64718293",
     borderColor: "#bb5c5c",
   },
   {
@@ -156,7 +144,6 @@ export const cardsData = [
       "Siels comtes no tenen fill, legitimimasculi, talcomdiuelpergami el dominiestaenperill.",
     link: "",
     passwordImg: "82937456",
-    passwordDescription: "46573920",
     borderColor: "#c88145",
   },
   {
@@ -168,7 +155,6 @@ export const cardsData = [
       "Aixi ho estableix la lei quehadictat elmateixrei tantcomtatcom baronia delmonarca tot seria.",
     link: "",
     passwordImg: "18293746",
-    passwordDescription: "37482910",
     borderColor: "#d77fff",
   },
   {
@@ -180,7 +166,6 @@ export const cardsData = [
       "Lariquesa delcomtat creix decop bencap amunt, quandeixad'estar amagat totelmetallde Bellmunt",
     link: "",
     passwordImg: "48573629",
-    passwordDescription: "28394057",
     borderColor: "#9e7e82",
   },
   {
@@ -192,7 +177,6 @@ export const cardsData = [
       "Terresfertilsiramats, boscos,firesimercats sonrecursosdestacats d'unsocspriilegiats.",
     link: "",
     passwordImg: "19384756",
-    passwordDescription: "47291038",
     borderColor: "#bb5c5c",
   },
 
@@ -205,7 +189,6 @@ export const cardsData = [
       "Pero no totrutllabe desde lomalanyprimer ; convindraempenyorar la RibailAleixar.",
     link: "",
     passwordImg: "91028375",
-    passwordDescription: "28473956",
     borderColor: "#cc8585",
   },
 
@@ -218,7 +201,6 @@ export const cardsData = [
       "No hihatrampesnienganys, us ho dic de veritat: delnaixement delcomtat, se'ncelebrenset-cents anys",
     link: "",
     passwordImg: "19283745",
-    passwordDescription: "38475620",
     borderColor: "#fba257",
   },
   {
@@ -230,7 +212,6 @@ export const cardsData = [
       "Siuspreguntenperladata no dubteuicomjo faig contesteu:el6demaig demiltres-centsvint-i-quatre",
     link: "",
     passwordImg: "91029384",
-    passwordDescription: "47563829",
     borderColor: "#6c8fcb",
   },
   {
@@ -242,7 +223,6 @@ export const cardsData = [
       "I de tota aquesta historia perguardar-nelamemoria se'nfaunampliredactat ben signatisegellat.",
     link: "",
     passwordImg: "10293847",
-    passwordDescription: "56473829",
     borderColor: "#32734a",
   },
 ];
