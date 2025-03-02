@@ -3,11 +3,12 @@ import styles from "./page.module.css";
 import { Card } from "@/components/Card/Card";
 import { cardsData } from "@/data/cardData";
 import { Suspense, useEffect, useState } from "react";
-import { Modal } from "@/components/Modal/Modal";
+
 import { Header } from "@/components/Header/Header";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
 import { Flourish, FlourishAlt } from "@/svg/Flourish";
+import { Modal } from "@/components/Modal/Modal";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
