@@ -16,31 +16,16 @@ export default function Home() {
     <Modal setShowModal={setShowModal} showModal={showModal}>
       <main className={styles.main}>
         <Navbar />
-        <div style={{ position: "relative" }}>
+        <div className={styles.mainContainer}>
           <img
             src="/images/pergaminoCorner.webp"
             alt="Prades"
-            style={{
-              zIndex: -1,
-              position: "absolute",
-              top: "-4rem",
-              left: "-1.5rem",
-              width: "10rem",
-            }}
+            className={styles.imageBg}
           />
           <Header />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              width: "100%",
-              marginBottom: "2rem",
-            }}
-          >
+          <div className={styles.flourishContainer}>
             <Flourish />
           </div>
-
-          {/* <ScrollPage /> */}
           <div className={styles.cardsContainer}>
             {cardsData.map((card) => {
               return (
