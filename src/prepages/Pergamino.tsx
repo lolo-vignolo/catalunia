@@ -13,7 +13,7 @@ import Link from "next/link";
 const Pergamino = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
-  const card = cardsData.find((card) => card.id === id);
+  const card = cardsData.find((card) => card.passwordImg === id);
 
   useEffect(() => {
     if (typeof window !== undefined) {
@@ -22,11 +22,7 @@ const Pergamino = () => {
         const checkIfIdExists = localStorage.getItem("qr-list");
         if (checkIfIdExists) {
           const qrList = checkIfIdExists.split(",");
-          console.log(qrList);
-
           if (!qrList.includes(idParam)) {
-            console.log("No está en la lista");
-
             localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
           }
         }

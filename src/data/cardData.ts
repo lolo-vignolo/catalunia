@@ -226,3 +226,24 @@ export const cardsData = [
     borderColor: "#32734a",
   },
 ];
+
+// https://setcentscomtatprades.vercel.app/cardpage?id=86753098
+// https://setcentscomtatprades.vercel.app/cardpage?id=20394857
+// https://setcentscomtatprades.vercel.app/cardpage?id=48572619
+// https://setcentscomtatprades.vercel.app/cardpage?id=73619284
+// https://setcentscomtatprades.vercel.app/cardpage?id=84736291
+// https://setcentscomtatprades.vercel.app/cardpage?id=28374651
+// https://setcentscomtatprades.vercel.app/cardpage?id=91028374
+// https://setcentscomtatprades.vercel.app/cardpage?id=74839201
+// https://setcentscomtatprades.vercel.app/cardpage?id=91029384
+// https://setcentscomtatprades.vercel.app/cardpage?id=74829301
+// https://setcentscomtatprades.vercel.app/cardpage?id=57382910
+// https://setcentscomtatprades.vercel.app/cardpage?id=38475619
+// https://setcentscomtatprades.vercel.app/cardpage?id=82937456
+// https://setcentscomtatprades.vercel.app/cardpage?id=18293746
+// https://setcentscomtatprades.vercel.app/cardpage?id=48573629
+// https://setcentscomtatprades.vercel.app/cardpage?id=19384756
+// https://setcentscomtatprades.vercel.app/cardpage?id=91028375
+// https://setcentscomtatprades.vercel.app/cardpage?id=19283745
+// https://setcentscomtatprades.vercel.app/cardpage?id=91029384
+// https://setcentscomtatprades.vercel.app/cardpage?id=10293847
