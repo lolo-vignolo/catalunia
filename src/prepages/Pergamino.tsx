@@ -15,6 +15,22 @@ const Pergamino = () => {
   const id = searchParams.get("id");
   const card = cardsData.find((card) => card.id === id);
 
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const idParam = searchParams.get("id");
+      if (idParam) {
+        const checkIfIdExists = localStorage.getItem("qr-list");
+        if (checkIfIdExists) {
+          const qrList = checkIfIdExists.split(",");
+
+          if (!qrList.includes(idParam)) {
+            localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
+          }
+        }
+      }
+    }
+  }, [searchParams]);
+
   if (!card) return null;
 
   return (
