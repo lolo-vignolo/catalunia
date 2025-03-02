@@ -16,7 +16,7 @@ const Pergamino = () => {
   const card = cardsData.find((card) => card.passwordImg === id);
 
   useEffect(() => {
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       const idParam = searchParams.get("id");
       if (idParam) {
         const checkIfIdExists = localStorage.getItem("qr-list");
