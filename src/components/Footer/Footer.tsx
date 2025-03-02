@@ -105,14 +105,14 @@ export const Footer = () => {
       </div> */}
       <div className={style.media}>
         <p>© 2021 setcents comtat prades</p>
-        <div className={style.socialMedia}>
+        {/* <div className={style.socialMedia}>
           <a href="#">
             <i className="fab fa-facebook-f"></i> Facebook
           </a>
           <a href="#">
             <i className="fab fa-instagram"></i> Instagram
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

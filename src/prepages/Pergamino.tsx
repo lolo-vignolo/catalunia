@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "../../prepages/cardprepage.module.css";
+import styles from "./cardprepage.module.css";
 import { cardsData } from "@/data/cardData";
 import { useSearchParams } from "next/navigation";
 import { Flourish, FlourishAlt } from "@/svg/Flourish";
 import { ArrowLeft } from "lucide-react";
 
-const Pergamino2 = () => {
+const Pergamino = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const card = cardsData.find((card) => card.id === id);
@@ -17,7 +17,6 @@ const Pergamino2 = () => {
   if (!card) return null;
 
   const handleGoBack = () => {
-    console.log("go back");
     window.history.back();
   };
 
@@ -79,16 +78,20 @@ const Pergamino2 = () => {
         }}
       >
         <div className={styles.containerCard}>
-          {/* <ArrowLeft
-            size={40}
-            color="#000"
+          <button
             style={{
-              cursor: "pointer",
-              marginRight: "auto",
-              zIndex: 1,
+              position: "absolute",
+              top: "-2rem",
+              left: "2rem",
+              width: "4rem",
+              display: "flex",
+              justifyContent: "center",
+              borderRadius: "0.5rem",
+              border: `solid 3px ${card.borderColor} `,
             }}
-            onClick={handleGoBack}
-          /> */}
+          >
+            <ArrowLeft size={30} color="#000" onClick={handleGoBack} />
+          </button>
           <div
             style={{
               width: "fit-content",
@@ -119,4 +122,4 @@ const Pergamino2 = () => {
   );
 };
 
-export default Pergamino2;
+export default Pergamino;

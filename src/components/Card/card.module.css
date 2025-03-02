@@ -6,7 +6,7 @@
   align-items: center;
   text-align: start;
   gap: 1rem;
-  padding: 0.4rem 0.6rem 1.2rem;
+  padding: 0.4rem 0.3rem 1.2rem;
   width: 47%;
   min-height: 20rem;
   height: fit-content;
@@ -37,7 +37,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 210px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,23 +58,4 @@
 .cardTitle:hover {
   transform: scale(1.09);
   transition: transform 0.3s ease-in-out;
-}
-@media (min-width: 1024px) {
-  .cardContainer {
-    width: 30%;
-  }
-
-  .cardTitle {
-    font-size: var(--body-font-size-md);
-  }
-}
-
-@media (min-width: 1440px) {
-  .cardContainer {
-    width: 25%;
-    max-width: 350px;
-  }
-  .cardTitle {
-    font-size: var(--body-font-size-lg);
-  }
 }

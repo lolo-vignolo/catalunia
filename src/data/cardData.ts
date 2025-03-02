@@ -133,7 +133,7 @@ export const cardsData = [
     link: "",
     passwordImg: "57382910",
     passwordDescription: "94857362",
-    borderColor: "#eee2cc",
+    borderColor: "#d6c3a8",
   },
   {
     id: "12",

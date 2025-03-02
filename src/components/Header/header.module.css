@@ -11,16 +11,3 @@
   width: 80%;
   margin-left: auto;
 }
-
-/* tablet */
-@media (min-width: 1024px) {
-  .headerContainer {
-    flex-direction: row;
-    padding: 0 6rem;
-  }
-}
-
-/* desktop */
-
-@media (min-width: 1440px) {
-}

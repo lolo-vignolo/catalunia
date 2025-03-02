@@ -88,31 +88,34 @@ export const Card = ({ card, setShowModal }: CardProps) => {
   return (
     <div className={styles.cardContainer} ref={cardRef}>
       <Link
+        //no allow click if not allowedImg
+
         href={`/cardpage?id=${card.id}`}
         className={styles.imageContainer}
         style={{
           border: `2px solid ${card.borderColor}`,
           outline: `4px solid ${card.borderColor}`,
           outlineOffset: "2px",
+          pointerEvents: allowedImg ? "auto" : "none",
         }}
       >
         <Image
-          src={card.portadaImg}
+          src={!allowedImg ? card.portadaImg : card.image}
           alt="Prades"
-          style={
-            {
-              // filter: !allowedImg ? " blur(3px) brightness(0.8)" : "",
-            }
-          }
+          style={{
+            filter: !allowedImg ? " blur(3px) brightness(0.8)" : "",
+          }}
           layout="fill"
         />
-        <Image
-          src="/images/sellos/selloMedieval.png"
-          alt="Sello Real"
-          className={styles.selloReal}
-          height={70}
-          width={70}
-        />
+        {!allowedImg && (
+          <Image
+            src="/images/sellos/selloMedieval.png"
+            alt="Sello Real"
+            className={styles.selloReal}
+            height={70}
+            width={70}
+          />
+        )}
       </Link>
       <div className={styles.bodyContainer}>
         {card.titles.map((title, index) => (
