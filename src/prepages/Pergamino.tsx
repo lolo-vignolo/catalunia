@@ -69,6 +69,8 @@ const Pergamino = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        maxWidth: "1000px",
+        margin: "0 auto",
       }}
     >
       {/* Contenido del pergamino */}
@@ -90,6 +92,7 @@ const Pergamino = () => {
           fontWeight: "bold",
           textShadow: "2px 2px 5px rgba(0,0,0,0.3)",
           padding: "20px",
+          maxWidth: "420px",
         }}
       >
         <div className={styles.containerCard}>
