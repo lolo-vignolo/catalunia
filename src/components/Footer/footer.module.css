@@ -10,6 +10,20 @@
   padding: 2rem 0 0.5rem;
 }
 
+.imagesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.imagesContainer img {
+  max-width: 170px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
 .footerInnerContainer {
   display: flex;
   justify-content: space-between;

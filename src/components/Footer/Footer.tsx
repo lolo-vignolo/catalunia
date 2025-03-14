@@ -1,43 +1,44 @@
 import { cardsData } from "@/data/cardData";
 import Image from "next/image";
 import style from "./footer.module.css";
-export const Footer = () => {
-  const firstColumn = cardsData.slice(0, cardsData.length / 4);
-  const secondColumn = cardsData.slice(
-    cardsData.length / 4,
-    cardsData.length / 2
-  );
-  const thirdColumn = cardsData.slice(
-    cardsData.length / 2,
-    (cardsData.length / 4) * 3
-  );
-  const fourthColumn = cardsData.slice(
-    (cardsData.length / 4) * 3,
-    cardsData.length
-  );
 
+const sliderData = [
+  "Oficines de Turisme del territori",
+  "Llibreria Gaudí (Reus)",
+  "Qui’k Discs (Reus)",
+  "Castell de Falset – Museu Comarcal",
+  "Estanc Espasa (Cornudella de Montsant)",
+];
+
+export const Footer = () => {
   return (
     <footer className={style.footer}>
       {/* Mobile version */}
       <div className={style.footerInnerContainer}>
-        <h1>Prades:</h1>
+        <div className={style.imagesContainer}>
+          <img src="/images/footer/portadaVioleta.webp" alt="Prades" />
+          <img src="/images/footer/portadaMarron.webp" alt="Prades" />
+        </div>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
+          <h1 style={{ fontSize: "1.2rem", textAlign: "center" }}>
+            Pots adquirir els llibrets commemoratius del centenari a:
+          </h1>
+        </div>
+
         <div className={style.columnTouns}>
           <div className={style.slider}>
-            {cardsData.map((card, index) => (
+            {sliderData.map((title, index) => (
               <span key={index} style={{ marginRight: "2rem" }}>
-                {card.titles.map((title, index) => (
-                  <h1 key={index}>{title}</h1>
-                ))}
+                <h2 key={index}>{title}</h2>
               </span>
             ))}
-            {cardsData.map((card, index) => (
-              <span
-                key={cardsData.length + index}
-                style={{ marginRight: "2rem" }}
-              >
-                {card.titles.map((title, index) => (
-                  <h1 key={index}>{title}</h1>
-                ))}
+            {sliderData.map((title, index) => (
+              <span key={index} style={{ marginRight: "2rem" }}>
+                <h2 key={index}>{title}</h2>
               </span>
             ))}
           </div>
@@ -52,67 +53,8 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* version desktop */}
-
-      {/* <div className={style.footerInnerContainerDesktop}>
-        <h1>Prades:</h1>
-        <div className={style.columnTounsDesktop}>
-          <div>
-            {firstColumn.map((card) => {
-              return (
-                <ul key={card.id}>
-                  <li>{card.title}</li>
-                </ul>
-              );
-            })}
-          </div>
-          <div>
-            {secondColumn.map((card) => {
-              return (
-                <ul key={card.id}>
-                  <li>{card.title}</li>
-                </ul>
-              );
-            })}
-          </div>
-          <div>
-            {thirdColumn.map((card) => {
-              return (
-                <ul key={card.id}>
-                  <li>{card.title}</li>
-                </ul>
-              );
-            })}
-          </div>
-          <div>
-            {fourthColumn.map((card) => {
-              return (
-                <ul key={card.id}>
-                  <li>{card.title}</li>
-                </ul>
-              );
-            })}
-          </div>
-        </div>
-        <div className={style.footerImgDesktop}>
-          <Image
-            src="/images/caballo.png"
-            alt="Prades"
-            width={200}
-            height={200}
-          />
-        </div>
-      </div> */}
       <div className={style.media}>
-        <p>© 2021 setcents comtat prades</p>
-        {/* <div className={style.socialMedia}>
-          <a href="#">
-            <i className="fab fa-facebook-f"></i> Facebook
-          </a>
-          <a href="#">
-            <i className="fab fa-instagram"></i> Instagram
-          </a>
-        </div> */}
+        <p>© 2025 set-cents anys comtat de les Muntanyes de Prades</p>
       </div>
     </footer>
   );
