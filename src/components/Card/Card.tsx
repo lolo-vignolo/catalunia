@@ -12,7 +12,10 @@ interface CardProps {
     titles: string[];
     portadaImg: string;
     image: string;
-    description: string;
+    description_row1: string;
+    description_row2: string;
+    description_row3: string;
+    description_row4: string;
     link: string;
     passwordImg: string;
     borderColor: string;
