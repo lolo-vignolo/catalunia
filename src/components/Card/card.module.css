@@ -8,11 +8,12 @@
   gap: 1rem;
   padding: 0.4rem 0.3rem 1.2rem;
   width: 47%;
-  min-height: 20rem;
+  min-height: 18rem;
   height: fit-content;
 }
 
 .bodyContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +51,7 @@
   margin: 0 !important;
 }
 .cardTitle {
-  font-size: var(--body-font-size-sm);
+  font-size: 1.2rem;
   cursor: pointer;
 
   /* hover effect */
@@ -58,4 +59,34 @@
 .cardTitle:hover {
   transform: scale(1.09);
   transition: transform 0.3s ease-in-out;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  padding: 0.5rem;
+  z-index: 1;
+  padding-bottom: 2rem;
+}
+
+.closeModal {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  background-color: #bb5c5c;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  align-content: center;
+  height: 1.2rem;
+  width: 1.2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
 }

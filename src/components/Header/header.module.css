@@ -8,6 +8,6 @@
   padding: 1rem;
 }
 .title {
-  width: 80%;
-  margin-left: auto;
+  width: 100%;
+  text-align: center;
 }

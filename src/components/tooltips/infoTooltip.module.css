@@ -19,26 +19,17 @@
   cursor: pointer;
   background-color: #bb5c5c;
   border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem;
+  align-content: center;
+  height: 2.2rem;
+  width: 2.5rem;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
 }
 
 .tooltipClose:hover {
   background-color: #a44b4b;
-}
-
-.tooltipLang {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  gap: 1rem;
-}
-
-.btnLang {
-  background-color: #bb5c5c;
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  color: white;
 }

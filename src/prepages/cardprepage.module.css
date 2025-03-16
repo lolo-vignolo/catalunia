@@ -24,3 +24,33 @@
   font-size: var(--body-font-size-lg);
   text-align: center;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding-top: 5rem;
+  height: auto;
+  transform-origin: top;
+  background-image: url("/images/pergamino.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 65rem;
+  }
+}

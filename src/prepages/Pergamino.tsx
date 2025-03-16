@@ -36,6 +36,7 @@ const Pergamino = () => {
 
   return (
     <motion.div
+      className={styles.container}
       initial={{
         scaleY: 0,
         clipPath: "polygon(0% 0%, 100% 0%, 100% 5%, 0% 5%)",
@@ -55,22 +56,6 @@ const Pergamino = () => {
           duration: 2,
           ease: [0.25, 1, 0.5, 1],
         },
-      }}
-      style={{
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100vw",
-        paddingTop: "5rem",
-        height: "65rem",
-        transformOrigin: "top",
-        backgroundImage: "url('/images/pergamino.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        maxWidth: "1000px",
-        margin: "0 auto",
       }}
     >
       {/* Contenido del pergamino */}
@@ -127,7 +112,21 @@ const Pergamino = () => {
           </div>
           <div className={styles.descritionContainer}>
             <Flourish color={card.borderColor} />
-            <p className={styles.description}>{card.description}</p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <div className={styles.content}>
+                <p className={styles.description}>{card.description_row1}</p>
+                <p className={styles.description}>{card.description_row2}</p>
+                <p className={styles.description}>{card.description_row3}</p>
+                <p className={styles.description}>{card.description_row4}</p>
+              </div>
+            </div>
+
             <FlourishAlt color={card.borderColor} />
             <Image
               src={"/images/sellos/selloReal.webp"}
