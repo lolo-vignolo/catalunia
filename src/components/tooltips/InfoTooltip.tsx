@@ -19,33 +19,33 @@ export const InfoTooltip = ({ close }: { close: (value: boolean) => void }) => {
         <h3> {ca.objective} </h3>
         <p> {ca.objectiveText}</p>
         <br />
-        <h3> {ca.prize}</h3>
-        <br />
-        <p> {ca.prizeText}</p>
-        <br />
         <h3> {ca.ready}</h3> <br />
         <p> {ca.readyText}</p>
       </div>
+
+      <button className={styles.tooltipClose} onClick={() => close(false)}>
+        <p>X</p>
+      </button>
     </div>
   );
 };
 
 const ca = {
-  title: "🎉 Benvinguts a la gran aventura dels Prades! 🎉 ",
-  text: "Celebrem els 700 anys dels Comtats dels Muntanyesos de Prades, i per això us hem preparat un joc èpic perquè descobriu la seva història mentre us divertiu!",
-  howToPlay: "🗺️ Com jugar?",
-  step1: "1️⃣ Viatja pels diferents municipis que formen part dels Prades.",
+  title:
+    "🏰 Viu l’èpica aventura dels 700 anys del comtat de les Muntanyes de Prades! 🎉 ",
+  text: "Enguany celebrem el 7è centenari de la creació del comtat de les Muntanyes de Prades i la seva annexió amb la baronia d’Entença. Aprofita l’efemèride per conèixer els indrets que havien format part d’aquest important senyoriu tot jugant. ",
+  howToPlay: "🗺️ Com s’hi juga? ",
+  step1:
+    "1️⃣ Escull un poble del mapa (si vols completar l’auca, hauràs d’anar a Siurana, Prades i Falset, les capitals històriques del comtat, mentre que la resta de cromos els podràs obtenir en dos llocs diferents, indicats amb un mateix color)",
   step2: "2️⃣ En llocs estratègics, trobaràs codis QR ocults.",
   step3:
-    "3️⃣ Escaneja cada codi QR amb el teu mòbil i desbloquejaràs una imatge secreta i un fragment de la història dels Prades!",
+    "3️⃣ Escaneja amb el teu mòbil el codi QR que veuràs al costat de cada cavaller i se’t desbloquejarà una imatge secreta i el text de cada vinyeta (aquests codis et donaran accés a un pergamí digital i així aniràs descobrint els fragments de la fascinant història dels orígens del comtat)",
   step4:
-    "4️⃣ Cada QR et donarà accés a un pergamí digital, amb una imatge i una explicació fascinant.",
+    "4️⃣ Completa la teva col·lecció de cromos virtuals que configuren l’auca.",
   objective: "🔎 Objectiu del joc",
   objectiveText:
-    "A la pàgina principal veuràs 20 cartes per descobrir. Sota cadascuna, trobaràs el nom del Prade on s’amaga el QR. Fes clic al nom i segueix el mapa misteriós per trobar-lo!",
-  prize: "🏆 El gran premi!",
-  prizeText:
-    "Els 50 primers aventurers que descobreixin tots els 20 QR rebran un diploma oficial de descobridor i un llibre amb tota la història dels Prades! 📖🏅",
-  ready: "💡 Esteu preparats?",
-  readyText: "Molta sort i… a buscar sense parar! 🏃‍♂️🎯",
+    "A la pàgina principal veuràs 20 cromos per descobrir. A sota de cada imatge hi consta el nom del poble on s’amaga el cavaller i el respectiu codi QR. Fes click al nom de cada lloc i segueix el mapa per trobar-lo. Quan ja tinguis el teu cromo, aprofita per passejar, visitar el patrimoni, contemplar el paisatge, gaudir de la gastronomia local... ",
+  ready: "💡 Esteu preparats i preparades?",
+  readyText:
+    "Molta sort i... a buscar sense parar!. Descobreix i gaudeix de tot el que l’antic comtat de les Muntanyes de Prades us pot oferir 🏃‍♂️🎯",
 };

@@ -14,7 +14,7 @@ export const Header = () => {
           marginLeft: "1.2rem",
         }}
       >
-        <h1 className={styles.title}>Auca de la creacio</h1>
+        <h1 className={styles.title}>Auca de la creació </h1>
         <h1 className={styles.title}>del comtat de les</h1>
         <h1 className={styles.title}>Muntanyes de Prades</h1>
       </div>

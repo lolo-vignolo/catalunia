@@ -23,6 +23,7 @@ export const Card = ({ card, isAllowwed, isFocused }: CardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (isFocused) {
@@ -70,10 +71,39 @@ export const Card = ({ card, isAllowwed, isFocused }: CardProps) => {
             }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => setIsModalOpen(!isModalOpen)}
           >
             {title}
           </h2>
         ))}
+        {isModalOpen && (
+          <div
+            className={styles.modal}
+            style={{ backgroundColor: card.borderColor }}
+          >
+            <p>
+              Busca <span>📍</span>
+              <span>
+                <a href={card.link} target="_blank" rel="noreferrer">
+                  {card.titles.map((title, index) => (
+                    <p key={index}>
+                      {title + " "}
+                      {index === card.titles.length - 1 ? "" : "/ "}
+                    </p>
+                  ))}
+                </a>
+              </span>{" "}
+              al mapa i fes click a la icona o a la barra lateral
+            </p>
+
+            <button
+              className={styles.closeModal}
+              onClick={() => setIsModalOpen(false)}
+            >
+              X
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
