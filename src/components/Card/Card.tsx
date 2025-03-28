@@ -82,17 +82,17 @@ export const Card = ({ card, isAllowwed, isFocused }: CardProps) => {
         {isModalOpen && (
           <div
             className={styles.modal}
-            style={{ backgroundColor: card.borderColor }}
+            style={{ backgroundColor: "#f9ead9" }}
           >
             <p>
               Busca <span>📍</span>
               <span>
                 <a href={card.link} target="_blank" rel="noreferrer">
                   {card.titles.map((title, index) => (
-                    <p key={index}>
+                    <strong key={index}>
                       {title + " "}
                       {index === card.titles.length - 1 ? "" : "/ "}
-                    </p>
+                    </strong>
                   ))}
                 </a>
               </span>{" "}
