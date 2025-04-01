@@ -7,17 +7,23 @@ export const InfoTooltip = ({ close }: { close: (value: boolean) => void }) => {
         <br />
         <p>{ca.text}</p>
         <br />
-        <h4> {ca.howToPlay}</h4> <br />
+        <br />
+        <h4> {ca.howToPlay}</h4> <br /><br />
         <p>{ca.step1}</p>
+        <br />
         <br />
         <p>{ca.step2}</p>
         <br />
+        <br />
         <p> {ca.step3}</p>
+        <br />
         <br />
         <p> {ca.step4}</p>
         <br />
+        <br />
         <h3> {ca.objective} </h3>
         <p> {ca.objectiveText}</p>
+        <br />
         <br />
         <h3> {ca.ready}</h3> <br />
         <p> {ca.readyText}</p>
@@ -37,7 +43,7 @@ const ca = {
   howToPlay: "🗺️ Com s’hi juga? ",
   step1:
     "1️⃣ Escull un poble del mapa (si vols completar l’auca, hauràs d’anar a Siurana, Prades i Falset, les capitals històriques del comtat, mentre que la resta de cromos els podràs obtenir en dos llocs diferents, indicats amb un mateix color)",
-  step2: "2️⃣ En llocs estratègics, trobaràs codis QR ocults.",
+  step2: "2️⃣ Desplaça’t a la destinació escollida i busca el cavaller dels 700 (una pista: el podràs trobar en edificis singulars, als Ajuntaments, Oficines de Turisme o panells informatius del municipi)",
   step3:
     "3️⃣ Escaneja amb el teu mòbil el codi QR que veuràs al costat de cada cavaller i se’t desbloquejarà una imatge secreta i el text de cada vinyeta (aquests codis et donaran accés a un pergamí digital i així aniràs descobrint els fragments de la fascinant història dels orígens del comtat)",
   step4:
@@ -47,5 +53,5 @@ const ca = {
     "A la pàgina principal veuràs 20 cromos per descobrir. A sota de cada imatge hi consta el nom del poble on s’amaga el cavaller i el respectiu codi QR. Fes click al nom de cada lloc i segueix el mapa per trobar-lo. Quan ja tinguis el teu cromo, aprofita per passejar, visitar el patrimoni, contemplar el paisatge, gaudir de la gastronomia local... ",
   ready: "💡 Esteu preparats i preparades?",
   readyText:
-    "Molta sort i... a buscar sense parar!. Descobreix i gaudeix de tot el que l’antic comtat de les Muntanyes de Prades us pot oferir 🏃‍♂️🎯",
+    "Molta sort i... a buscar sense parar! Descobreix i gaudeix de tot el que l’antic comtat de les Muntanyes de Prades us pot oferir 🏃‍♂️🎯",
 };
