@@ -11,7 +11,7 @@ export const Header = () => {
           justifyContent: "center",
           alignItems: "center",
           marginTop: "2.3rem",
-          marginLeft: "1.2rem",
+          marginLeft: "3rem",
         }}
       >
         <h1 className={styles.title}>Auca de la creació </h1>

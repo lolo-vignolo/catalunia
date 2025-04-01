@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLogoContainer}>
-        <Image src="/images/escudo.webp" alt="Prades" width={50} height={50} />
+        <Image src="/images/escudo.webp" alt="Prades" width={40} height={50} />
         <h1 className={styles.title}>L’aventura dels 700 anys</h1>
       </div>
       <Info

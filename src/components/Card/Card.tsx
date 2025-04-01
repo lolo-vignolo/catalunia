@@ -96,7 +96,7 @@ export const Card = ({ card, isAllowwed, isFocused }: CardProps) => {
                   ))}
                 </a>
               </span>{" "}
-              al mapa i fes click a la icona o a la barra lateral
+              al mapa i fes click a la icona o a la barra inferior
             </p>
 
             <button

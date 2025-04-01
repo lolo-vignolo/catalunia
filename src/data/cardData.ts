@@ -325,7 +325,7 @@ export const cardsData = [
     description_row3: "contesteu: el 6 de maig",
     description_row4: "de mil tres-cents vint-i-quatre.",
     link: "https://www.google.com/maps/d/edit?mid=1l9QqeO2RVIm96auNuYvvB6gptHO_8vQ&usp=sharing",
-    passwordImg: "91029384",
+    passwordImg: "91029381",
     borderColor: "#6c8fcb",
   },
   // I de tota aquesta història,
@@ -365,5 +365,5 @@ export const cardsData = [
 // https://setcentscomtatprades.vercel.app/cardpage?id=19384756
 // https://setcentscomtatprades.vercel.app/cardpage?id=91028375
 // https://setcentscomtatprades.vercel.app/cardpage?id=19283745
-// https://setcentscomtatprades.vercel.app/cardpage?id=91029384
+// https://setcentscomtatprades.vercel.app/cardpage?id=91029381
 // https://setcentscomtatprades.vercel.app/cardpage?id=10293847
