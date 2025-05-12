@@ -1,3 +1,4 @@
+const version = new Date().getTime(); 
 export const cardsData = [
   //   El bon rei Jaume II
   // ha estat molt espavilat
@@ -6,8 +7,8 @@ export const cardsData = [
   {
     id: "1",
     titles: ["Siurana"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-1.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-1.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-1.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-1.webp?v=${version}`,
     description_row1: "El bon rei Jaume II",
     description_row2: "ha estat molt espavilat",
     description_row3: "en fer néixer un comtat",
@@ -23,8 +24,8 @@ export const cardsData = [
   {
     id: "2",
     titles: ["Prades"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-2.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-2.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-2.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-2.webp?=${version}`,
     description_row1: "Amb pompa i solemnitat",
     description_row2: "és fundat el nou comtat.",
     description_row3: "L’infant Ramon Berenguer",
@@ -42,8 +43,8 @@ export const cardsData = [
   {
     id: "3",
     titles: ["Falset"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-3.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-3.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-3.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-3.webp?=${version}`,
     description_row1: "El menut de deu germans",
     description_row2: "enrere no es pot quedar;",
     description_row3: "rep un feu i ha de prestar",
@@ -59,8 +60,8 @@ export const cardsData = [
   {
     id: "4",
     titles: ["Capafonts", "Bellmunt de Priorat"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-4.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-4.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-4.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-4.webp?=${version}`,
     description_row1: "Nobles, infants i prelats,",
     description_row2: "cavallers i ciutadans,",
     description_row3: "dels petits fins als més grans,",
@@ -76,8 +77,8 @@ export const cardsData = [
   {
     id: "5",
     titles: ["La Febró", "El Molar"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-5.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-5.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-5.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-5.webp?=${version}`,
     description_row1: "Dalt del cingle, ben ufana,",
     description_row2: "l’ardida i bella Siurana,",
     description_row3: "antic cap de valiat,",
@@ -94,8 +95,8 @@ export const cardsData = [
   {
     id: "6",
     titles: ["Arbolí", "El Masroig"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-6.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-6.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-6.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-6.webp?=${version}`,
     description_row1: "Prades, la vila comtal,",
     description_row2: "n’esdevé la capital;",
     description_row3: "però com que hi fa molt fred,",
@@ -111,8 +112,8 @@ export const cardsData = [
   {
     id: "7",
     titles: ["Cornudella de Montsant", "Marçà"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-7.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-7.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-7.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-7.webp?=${version}`,
     description_row1: "El Montsant i la Gritella",
     description_row2: "s’abracen a Cornudella.",
     description_row3: "Del comtat, vila pregona,",
@@ -128,8 +129,8 @@ export const cardsData = [
   {
     id: "8",
     titles: ["Albarca", "Capçanes"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-8.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-8.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-8.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-8.webp?=${version}`,
     description_row1: "Hi ha alguns llocs on el senyor",
     description_row2: "comparteix el seu poder:",
     description_row3: "la Cartoixa, amb el prior,",
@@ -145,8 +146,8 @@ export const cardsData = [
   {
     id: "9",
     titles: ["Ulldemolins", "Els Guiamets"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-9.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-9.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-9.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-9.webp?=${version}`,
     description_row1: "Són les Muntanyes de Prades",
     description_row2: "l’escenari on tot comença,",
     description_row3: "i s’hi ajunten vinculades",
@@ -163,8 +164,8 @@ export const cardsData = [
   {
     id: "10",
     titles: ["Vilanova de Prades", "Garcia"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-10.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-10.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-10.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-10.webp?=${version}`,
     description_row1: "De la seva mort ençà,",
     description_row2: "tornaren a la Corona:",
     description_row3: "Falset, Altafalla, Móra,",
@@ -180,8 +181,8 @@ export const cardsData = [
   {
     id: "11",
     titles: ["Vallclara", "Móra d´Ebre"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-11.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-11.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-11.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-11.webp?=${version}`,
     description_row1: "I encara s’hi afegiria",
     description_row2: "el domini de Garcia.",
     description_row3: "Així es funda un senyoriu",
@@ -197,8 +198,8 @@ export const cardsData = [
   {
     id: "12",
     titles: ["La Riba", "Tivissa"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-12.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-12.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-12.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-12.webp?=${version}`,
     description_row1: "Aquesta donació",
     description_row2: "fixa una condició:",
     description_row3: "el comte ho conservarà",
@@ -214,8 +215,8 @@ export const cardsData = [
   {
     id: "13",
     titles: ["Farena", "Pratdip"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-13.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-13.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-13.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-13.webp?=${version}`,
     description_row1: "Si els comtes no tenen fill,",
     description_row2: "legítim i masculí,",
     description_row3: "tal com diu el pergamí,",
@@ -231,8 +232,8 @@ export const cardsData = [
   {
     id: "14",
     titles: ["Mont-ral", "Vandellòs"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-14.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-14.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-14.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-14.webp?=${version}`,
     description_row1: "Així ho estableix la llei",
     description_row2: "que ha dictat el mateix rei:",
     description_row3: "tant comtat com baronia,",
@@ -248,8 +249,8 @@ export const cardsData = [
   {
     id: "15",
     titles: ["L´Aleixar", "L´Hospitalet de l´Infant"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-15.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-15.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-15.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-15.webp?=${version}`,
     description_row1: "La riquesa del comtat",
     description_row2: "creix de cop ben cap amunt,",
     description_row3: "quan deixa d’estar amagat",
@@ -265,8 +266,8 @@ export const cardsData = [
   {
     id: "16",
     titles: ["Maspujols", "Gratallops"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-16.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-16.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-16.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-16.webp?=${version}`,
     description_row1: "Terres fèrtils i ramats,",
     description_row2: "boscos, fires i mercats",
     description_row3: "són recursos destacats",
@@ -283,8 +284,8 @@ export const cardsData = [
   {
     id: "17",
     titles: ["La Morera de Montsant", "Torroja del Priorat"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-17.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-17.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-17.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-17.webp?=${version}`,
     description_row1: "Però no tot rutlla bé",
     description_row2: "des de “lo mal any primer”;",
     description_row3: "convindrà empenyorar",
@@ -301,8 +302,8 @@ export const cardsData = [
   {
     id: "18",
     titles: ["Escaladei", "La Vilella Alta"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-18.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-18.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-18.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-18.webp?=${version}`,
     description_row1: "No hi ha trampes ni enganys,",
     description_row2: "us ho dic de veritat:",
     description_row3: "del naixement del comtat,",
@@ -318,8 +319,8 @@ export const cardsData = [
   {
     id: "19",
     titles: ["La Vilella Baixa", "Porrera"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-19.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-19.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-19.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-19.webp?=${version}`,
     description_row1: "Si us pregunten per la data",
     description_row2: "no dubteu i com jo faig",
     description_row3: "contesteu: el 6 de maig",
@@ -335,8 +336,8 @@ export const cardsData = [
   {
     id: "20",
     titles: ["La Figuera", "Poboleda"],
-    portadaImg: "/images/cardsBlackAndWhite/cat-bn-20.png",
-    image: "/images/cardsColor/700-Prades-Pilarin-20.webp",
+    portadaImg: `/images/cardsBlackAndWhite/cat-bn-20.png?v=${version}`,
+    image: `/images/cardsColor/700-Prades-Pilarin-20.webp?=${version}`,
     description_row1: "I de tota aquesta història,",
     description_row2: "per guardar-ne la memòria,",
     description_row3: "se’n fa un ampli redactat",
