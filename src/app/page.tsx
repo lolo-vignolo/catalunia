@@ -69,7 +69,7 @@
 import styles from "./page.module.css";
 import { Card } from "@/components/Card/Card";
 import { cardsData } from "@/data/cardData";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useCallback } from "react";
 
 import { Header } from "@/components/Header/Header";
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -84,61 +84,70 @@ export default function Home() {
   >([]);
 
   // Función para actualizar la lista desde localStorage
-  const updateAllowedCards = () => {
+  const updateAllowedCards = useCallback(() => {
     if (typeof window !== "undefined") {
       const passwordsSaved = localStorage.getItem("qr-list");
       if (passwordsSaved) {
         const listOfPasswords = passwordsSaved.split(",").filter(id => id.trim());
-        setListOfAllowedCards(listOfPasswords);
+        setListOfAllowedCards(prev => {
+          // Solo actualizar si hay cambios
+          if (JSON.stringify(prev) !== JSON.stringify(listOfPasswords)) {
+            console.log('📱 iPhone: Cards updated', listOfPasswords);
+            return listOfPasswords;
+          }
+          return prev;
+        });
       } else {
         setListOfAllowedCards([]);
       }
     }
-  };
+  }, []);
 
   useEffect(() => {
     // Cargar inicial
     updateAllowedCards();
 
-    // Escuchar cuando la página se vuelve visible (regreso del escaneo)
+    // Para iPhone Safari: múltiples estrategias
     const handleVisibilityChange = () => {
       if (!document.hidden) {
-        updateAllowedCards();
+        setTimeout(updateAllowedCards, 100);
       }
     };
 
-    // Escuchar cuando la ventana recibe focus
     const handleFocus = () => {
+      setTimeout(updateAllowedCards, 100);
+    };
+
+    const handlePageShow = () => {
+      setTimeout(updateAllowedCards, 100);
+    };
+
+    const handleTouchStart = () => {
       updateAllowedCards();
     };
 
-    // Escuchar cambios en localStorage (para otros tabs)
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'qr-list') {
-        updateAllowedCards();
-      }
-    };
-
-    // Agregar listeners
+    // Event listeners
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('focus', handleFocus);
-    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('pageshow', handlePageShow);
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
 
-    // Para Safari: también verificar periódicamente
+    // Intervalo más frecuente para iPhone
     const interval = setInterval(() => {
       if (!document.hidden) {
         updateAllowedCards();
       }
-    }, 1000);
+    }, 300);
 
     // Cleanup
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('focus', handleFocus);
-      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('pageshow', handlePageShow);
+      document.removeEventListener('touchstart', handleTouchStart);
       clearInterval(interval);
     };
-  }, []);
+  }, [updateAllowedCards]);
 
   return (
     <Modal setShowModal={setShowModal} showModal={showModal}>
