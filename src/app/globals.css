@@ -40,7 +40,12 @@ body {
 }
 
 body {
+  background-color: #e8dfc8;
   background-image: url("/images/pergamino/pergamino.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 /* reset */

@@ -1,67 +1,39 @@
-"use client";
-import styles from "./page.module.css";
-import { Card } from "@/components/Card/Card";
-import { cardsData } from "@/data/cardData";
-import { Suspense, useEffect, useState } from "react";
-
-import { Header } from "@/components/Header/Header";
-import { Navbar } from "@/components/Navbar/Navbar";
-import { Footer } from "@/components/Footer/Footer";
-import { Flourish, FlourishAlt } from "@/svg/Flourish";
-import { Modal } from "@/components/Modal/Modal";
+// Server Component — no 'use client'. All interactivity lives in <CardGrid />.
+import { Suspense } from 'react';
+import styles from './page.module.css';
+import { Navbar } from '@/components/Navbar/Navbar';
+import { GameHeader } from '@/components/ui/GameHeader';
+import { Footer } from '@/components/Footer/Footer';
+import { CardGrid } from '@/components/game/CardGrid';
+import { Flourish } from '@/svg/Flourish';
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false);
-  const [listOfAllowedCards, setListOfAllowedCards] = useState<
-    string[] | undefined
-  >([]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const passwordsSaved = localStorage.getItem("qr-list");
-      if (passwordsSaved) {
-        const listOfPasswords = passwordsSaved.split(",");
-        setListOfAllowedCards(listOfPasswords);
-      }
-    }
-  }, []);
-
   return (
-    <Modal setShowModal={setShowModal} showModal={showModal}>
+    <>
+      <Navbar />
       <main className={styles.main}>
-        <Navbar />
         <div className={styles.mainContainer}>
+          {/* decorative corner parchment — aria-hidden */}
           <img
             src="/images/pergaminoCorner.webp"
-            alt="Prades"
+            alt=""
             className={styles.imageBg}
+            aria-hidden="true"
           />
-          <Header />
-          <div className={styles.flourishContainer}>
-            <Flourish />
-          </div>
-          <div className={styles.cardsContainer}>
-            {cardsData.map((card) => {
-              const isAllowwed = listOfAllowedCards?.includes(card.passwordImg);
-              const isFocused =
-                listOfAllowedCards?.[listOfAllowedCards.length - 1] ===
-                card.passwordImg;
 
-              return (
-                <Suspense key={card.id} fallback={<div>Loading...</div>}>
-                  <Card
-                    card={card}
-                    isAllowwed={isAllowwed}
-                    isFocused={isFocused}
-                  />
-                </Suspense>
-              );
-            })}
-            <FlourishAlt />
+          <GameHeader />
+
+          <div className={styles.flourishContainer}>
+            <Flourish color="#5c3100" />
           </div>
+
+          {/* CardGrid is a Client Component: handles Zustand, unlocking, modal */}
+          <Suspense fallback={<div className={styles.gridPlaceholder} />}>
+            <CardGrid />
+          </Suspense>
         </div>
       </main>
       <Footer />
-    </Modal>
+    </>
   );
 }

@@ -1,0 +1,22 @@
+/* ── CardGrid ───────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* mobile: 2 columns */
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* tablet: 3 columns */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* desktop: 4 columns */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

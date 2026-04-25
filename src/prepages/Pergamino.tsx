@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import styles from "./cardprepage.module.css";
 import { cardsData } from "@/data/cardData";
@@ -9,28 +9,24 @@ import { useSearchParams } from "next/navigation";
 import { Flourish, FlourishAlt } from "@/svg/Flourish";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useGameStore } from "@/hooks/useGameStore";
 
 const Pergamino = () => {
   const searchParams = useSearchParams();
+  // ⚠️ Always read as searchParams.id — QR codes use this exact param name
   const id = searchParams.get("id");
   const card = cardsData.find((card) => card.passwordImg === id);
+  const { unlockCard } = useGameStore();
 
+  // Unlock the card when the user lands via QR scan
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const idParam = searchParams.get("id");
-      if (idParam) {
-        const checkIfIdExists = localStorage.getItem("qr-list") || "";
-        if (checkIfIdExists) {
-          const qrList = checkIfIdExists.split(",");
-          if (!qrList.includes(idParam)) {
-            localStorage.setItem("qr-list", `${checkIfIdExists},${idParam}`);
-          }
-        } else {
-          localStorage.setItem("qr-list", idParam);
-        }
-      }
+    const idParam = searchParams.get("id");
+    if (idParam) {
+      unlockCard(idParam);
+      // Signal CardGrid to show the celebration modal when user navigates back
+      sessionStorage.setItem("newlyUnlocked", idParam);
     }
-  }, [searchParams]);
+  }, [searchParams, unlockCard]);
 
   if (!card) return null;
 
@@ -58,8 +54,8 @@ const Pergamino = () => {
         },
       }}
     >
-      {/* Contenido del pergamino */}
       <motion.div
+        className={styles.innerContent}
         initial={{ opacity: 0, y: 50, scale: 0.9 }}
         animate={{
           opacity: 1,
@@ -67,70 +63,44 @@ const Pergamino = () => {
           scale: 1,
           transition: { delay: 1, duration: 1.5, ease: "easeOut" },
         }}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-          fontSize: "24px",
-          fontWeight: "bold",
-          textShadow: "2px 2px 5px rgba(0,0,0,0.3)",
-          padding: "20px",
-          maxWidth: "420px",
-        }}
       >
         <div className={styles.containerCard}>
-          <button
-            style={{
-              position: "absolute",
-              top: "-2rem",
-              left: "2rem",
-              width: "4rem",
-              display: "flex",
-              justifyContent: "center",
-              borderRadius: "0.5rem",
-              border: `solid 3px ${card.borderColor} `,
-            }}
+          {/* Back button — min 48px touch target */}
+          <Link
+            href="/"
+            className={styles.backButton}
+            aria-label="Tornar a la col·lecció"
+            style={{ borderColor: card.borderColor }}
           >
-            <Link href="/">
-              <ArrowLeft size={30} color="#000" />
-            </Link>
-          </button>
+            <ArrowLeft size={24} aria-hidden="true" />
+            Tornar
+          </Link>
+
           <div
+            className={styles.imageFrame}
             style={{
-              width: "fit-content",
-              height: "fit-content",
               border: `3px solid ${card.borderColor}`,
               outline: `5px solid ${card.borderColor}`,
               outlineOffset: "2px",
-              boxShadow: "0px 4px 15px rgba(0,0,0,0.2)",
-              transition: "all 0.3s ease-in-out",
             }}
           >
-            <Image src={card.image} alt="1" width={300} height={300} />
+            <Image src={card.image} alt={`Cromo de ${card.titles[0]}`} width={300} height={300} />
           </div>
+
           <div className={styles.descritionContainer}>
-            <Flourish color={card.borderColor} />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <div className={styles.content}>
-                <p className={styles.description}>{card.description_row1}</p>
-                <p className={styles.description}>{card.description_row2}</p>
-                <p className={styles.description}>{card.description_row3}</p>
-                <p className={styles.description}>{card.description_row4}</p>
-              </div>
+            <div className={styles.flourishWrapper}><Flourish color={card.borderColor} /></div>
+            <div className={styles.poemBlock}>
+              <p className={styles.description}>{card.description_row1}</p>
+              <p className={styles.description}>{card.description_row2}</p>
+              <p className={styles.description}>{card.description_row3}</p>
+              <p className={styles.description}>{card.description_row4}</p>
             </div>
 
-            <FlourishAlt color={card.borderColor} />
+            <div className={styles.flourishWrapper}><FlourishAlt color={card.borderColor} /></div>
             <Image
               src={"/images/sellos/selloReal.webp"}
-              alt="1"
+              alt="Sello reial del comtat"
+              className={styles.sello}
               width={80}
               height={80}
             />

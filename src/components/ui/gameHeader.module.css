@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.3rem;
+  margin-left: 3rem;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  color: var(--color-black);
+  font-family: var(--font-mono);
+}

@@ -1,14 +1,58 @@
 .containerCard {
   display: flex;
-  height: fit-content;
   width: 100%;
   position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
-  gap: 1.5rem;
+  /* top/bottom padding respects the rolled top and bottom of the scroll */
+  padding: 13% 0 14%;
+  gap: 0.75rem;
   z-index: 1;
+  flex: 1;
+}
+
+.imageFrame {
+  border-radius: 4px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.28), inset 0 0 0 1px rgba(255,255,255,0.4);
+  /* constrain image to fit comfortably inside the scroll */
+  max-width: min(220px, 55vw);
+}
+
+.imageFrame img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Back button — min 48px touch target, tactile feel */
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 48px;
+  min-width: 100px;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid; /* color set via inline style */
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-black);
+  text-decoration: none;
+  cursor: pointer;
+  align-self: flex-start;
+  background: rgba(255, 248, 230, 0.6);
+  backdrop-filter: blur(2px);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  background: rgba(255, 248, 230, 0.9);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
 }
 
 .descritionContainer {
@@ -16,13 +60,80 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
-  gap: 0.5rem;
+  padding: 0;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.poemBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  background: rgba(255, 245, 225, 0.55);
+  border-top: 1px solid rgba(0,0,0,0.12);
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 300px;
+}
+
+.sello {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.4));
+  margin-top: 0;
+  width: 60px !important;
+  height: 60px !important;
+}
+
+/* ── Mobile: compress layout to avoid any overflow ── */
+@media (max-width: 480px) {
+  .containerCard {
+    padding: 1rem 1rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .backButton {
+    min-height: 40px;
+    font-size: 0.875rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .poemBlock {
+    padding: 0;
+    gap: 0.15rem;
+  }
+
+  .flourishWrapper {
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .flourishWrapper svg {
+    height: 30px;
+    width: auto;
+  }
+
+  .description {
+    font-size: var(--body-font-size-sm);
+    line-height: 1.6;
+  }
+
+  .sello {
+    width: 60px !important;
+    height: 60px !important;
+  }
 }
 
 .description {
-  font-size: var(--body-font-size-lg);
+  font-size: var(--body-font-size-sm);
   text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  display: block;
 }
 
 .content {
@@ -37,20 +148,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  padding-top: 5rem;
-  height: auto;
+  width: 100%;
+  max-width: 680px;
+  height: 100dvh;
+  overflow: hidden;
   transform-origin: top;
   background-image: url("/images/pergamino.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 900px;
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .container {
-    height: 65rem;
-  }
+/* Scrollable inner area — hides scrollbar, scrolls within the pergamino shape */
+.innerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* horizontal padding avoids the rolled edges of the scroll */
+  padding: 0 12%;
+}
+.innerContent::-webkit-scrollbar {
+  display: none;
 }

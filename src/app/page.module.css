@@ -10,7 +10,38 @@
 
 .mainContainer {
   position: relative;
-  max-width: 420px;
+  width: 100%;
+  max-width: 960px;
+  padding: 0 1rem;
+}
+
+/* Placeholder shown while CardGrid (Client Component) hydrates */
+.gridPlaceholder {
+  width: 100%;
+  height: 200px;
+}
+
+/* Decorative corner image */
+.imageBg {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: 180px;
+  height: auto;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Flourish separator between header and grid */
+.flourishContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -19,14 +50,7 @@
   margin-bottom: 0.5rem;
 }
 
-.cardsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 1rem;
-}
+/* Grid layout is now owned by CardGrid.module.css */
 
 @media (prefers-reduced-motion) {
   .card:hover span {

@@ -43,7 +43,7 @@ export const Footer = () => {
             ))}
           </div>
         </div>
-        <div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <Image
             src="/images/logoAniversary.png"
             alt="Prades"

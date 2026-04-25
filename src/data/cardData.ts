@@ -68,7 +68,7 @@ export const cardsData = [
     description_row4: "a l’acte són convidats.",
     link: "https://www.google.com/maps/d/edit?mid=1l9QqeO2RVIm96auNuYvvB6gptHO_8vQ&usp=sharing",
     passwordImg: "73619284",
-    borderColor: "#e3cfaa",
+    borderColor: "#8a6520",
   },
   //   Dalt del cingle, ben ufana,
   // l’ardida i bella Siurana,
@@ -154,7 +154,7 @@ export const cardsData = [
     description_row4: "les terres del noble Entença.",
     link: "https://www.google.com/maps/d/edit?mid=1l9QqeO2RVIm96auNuYvvB6gptHO_8vQ&usp=sharing",
     passwordImg: "91029384",
-    borderColor: "#d8aed2",
+    borderColor: "#8b4a96",
   },
   //   De la seva mort ençà,
   // tornaren a la Corona:
@@ -172,7 +172,7 @@ export const cardsData = [
     description_row4: "Pratdip, Tivissa i Marçà.",
     link: "https://www.google.com/maps/d/edit?mid=1l9QqeO2RVIm96auNuYvvB6gptHO_8vQ&usp=sharing",
     passwordImg: "74829301",
-    borderColor: "#b5a588",
+    borderColor: "#6b4c1e",
   },
   //   I encara s’hi afegiria
   // el domini de Garcia.
@@ -189,7 +189,7 @@ export const cardsData = [
     description_row4: "entre serres, mar i riu.",
     link: "https://www.google.com/maps/d/edit?mid=1l9QqeO2RVIm96auNuYvvB6gptHO_8vQ&usp=sharing",
     passwordImg: "57382910",
-    borderColor: "#d6c3a8",
+    borderColor: "#7a5227",
   },
   //   Aquesta donació
   // fixa una condició:

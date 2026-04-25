@@ -1,0 +1,125 @@
+/* ── CelebrationModal ─────────────────────────────────────────── */
+
+/* Backdrop with blur */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Panel */
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  margin: auto;
+  width: min(92vw, 380px);
+  height: fit-content;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #f9ead9;
+  border-radius: 20px;
+  padding: 2rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Confetti ─────────────────────────────────────────────────── */
+.confettiContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* 10 pieces, cycling through medieval colours */
+.confettiPiece {
+  position: absolute;
+  top: -10%;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: confettiFall 1.8s ease-in forwards;
+}
+
+/* Stagger left positions and delays for each piece */
+.confettiPiece[data-index="0"]  { left: 8%;  background: #c8a84b; animation-delay: 0.0s; }
+.confettiPiece[data-index="1"]  { left: 18%; background: #8b1a1a; animation-delay: 0.15s; }
+.confettiPiece[data-index="2"]  { left: 28%; background: #2d5a27; animation-delay: 0.08s; }
+.confettiPiece[data-index="3"]  { left: 38%; background: #c8a84b; animation-delay: 0.3s;  }
+.confettiPiece[data-index="4"]  { left: 48%; background: #8b1a1a; animation-delay: 0.05s; }
+.confettiPiece[data-index="5"]  { left: 58%; background: #2d5a27; animation-delay: 0.22s; }
+.confettiPiece[data-index="6"]  { left: 68%; background: #c8a84b; animation-delay: 0.1s;  }
+.confettiPiece[data-index="7"]  { left: 78%; background: #8b1a1a; animation-delay: 0.35s; }
+.confettiPiece[data-index="8"]  { left: 88%; background: #2d5a27; animation-delay: 0.18s; }
+.confettiPiece[data-index="9"]  { left: 94%; background: #c8a84b; animation-delay: 0.4s;  }
+
+@keyframes confettiFall {
+  0%   { transform: translateY(0) rotate(0deg);    opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* ── Card image ───────────────────────────────────────────────── */
+.imageWrapper {
+  border: 2px solid;
+  outline: 4px solid;
+  outline-offset: 2px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── Text ─────────────────────────────────────────────────────── */
+.title {
+  font-size: var(--subtitle-font-size-sm);
+  font-family: var(--font-mono);
+  text-align: center;
+  display: block;
+}
+
+.subtitle {
+  font-size: var(--body-font-size-sm);
+  font-family: var(--font-mono);
+  text-align: center;
+  display: block;
+}
+
+.counter {
+  font-size: var(--body-font-size-sm);
+  font-family: var(--font-mono);
+  text-align: center;
+  display: block;
+}
+
+/* ── Close button (min 48px) ──────────────────────────────────── */
+.closeButton {
+  margin-top: 0.5rem;
+  min-height: 48px;
+  min-width: 140px;
+  padding: 0.6rem 2rem;
+  background: #881606;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  background: #b52008;
+  outline: 3px solid #881606;
+  outline-offset: 3px;
+}
