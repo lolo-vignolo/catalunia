@@ -16,17 +16,21 @@ const Pergamino = () => {
   // ⚠️ Always read as searchParams.id — QR codes use this exact param name
   const id = searchParams.get("id");
   const card = cardsData.find((card) => card.passwordImg === id);
-  const { unlockCard } = useGameStore();
+  const { unlockCard, _hasHydrated } = useGameStore();
 
   // Unlock the card when the user lands via QR scan
+  // IMPORTANT: wait for _hasHydrated so localStorage is fully loaded first.
+  // Without this guard, unlockCard runs before existing cards are restored,
+  // overwriting localStorage with only the new card (erasing previous ones).
   useEffect(() => {
+    if (!_hasHydrated) return;
     const idParam = searchParams.get("id");
     if (idParam) {
       unlockCard(idParam);
       // Signal CardGrid to show the celebration modal when user navigates back
       sessionStorage.setItem("newlyUnlocked", idParam);
     }
-  }, [searchParams, unlockCard]);
+  }, [_hasHydrated, searchParams, unlockCard]);
 
   if (!card) return null;
 

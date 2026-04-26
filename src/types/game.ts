@@ -49,5 +49,7 @@ export interface Card extends CardData {
 export interface GameState {
   unlockedCards: string[];
   tokens: number;
+  _hasHydrated: boolean;
+  setHasHydrated: (value: boolean) => void;
   unlockCard: (passwordImg: string) => void;
 }
