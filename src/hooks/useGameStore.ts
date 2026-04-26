@@ -22,9 +22,6 @@ export const useGameStore = create<GameStore>()(
     (set, get) => ({
       unlockedCards: [] as string[],
       tokens: 0,
-      _hasHydrated: false,
-
-      setHasHydrated: (value: boolean) => set({ _hasHydrated: value }),
 
       unlockCard: (passwordImg: string) => {
         // Guard: only accept valid tokens, never duplicate
@@ -40,14 +37,11 @@ export const useGameStore = create<GameStore>()(
     {
       name: 'qr-game-store', // localStorage key
       storage: createJSONStorage(() => localStorage),
-      // Only persist the data, not the actions or transient flags
+      // Only persist the data, not the actions
       partialize: (state) => ({
         unlockedCards: state.unlockedCards,
         tokens: state.tokens,
       }),
-      onRehydrateStorage: () => (state) => {
-        state?.setHasHydrated(true);
-      },
     },
   ),
 );
